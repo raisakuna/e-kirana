@@ -10,7 +10,7 @@ const HeroSection = () => {
             <br />
             Up to 50% OFF!
           </h1>
-          <p className="mb-4 max-w-2xl text-gray-500 dark:text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl">
+          <p className="mb4 max-w-2xl text-gray-500 dark:text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl">
             Don't Wait - Limited Stock at Unbeatable Prices!
           </p>
           <a
