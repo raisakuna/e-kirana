@@ -3,6 +3,7 @@ import LandingPage from "../pages/landing";
 import AboutUs from "../pages/about-us/about-us.page";
 import AllProductGrid from "../pages/products/all-products.page";
 import HomePageLayout from "../pages/layout/home.layout.page";
+import UserLayoutPage from "../pages/layout/user-layout.page";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,17 @@ const router = createBrowserRouter([
         element: <AboutUs />,
       },
       { path: "products", element: <AllProductGrid /> },
+    ],
+  },
+
+  {
+    path: "/admin",
+    element: <UserLayoutPage role="admin" />,
+    childre: [
+      {
+        index: true,
+        element: <>Admin Dashboard </>,
+      },
     ],
   },
 ]);
