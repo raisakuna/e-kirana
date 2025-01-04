@@ -1,6 +1,11 @@
 import React from "react";
+import "flowbite";
+import { DarkThemeToggle } from "flowbite-react";
 
-const HeaderPage = () => {
+const HeaderPage = (user) => {
+  // create data and store informatioin -> state
+  // receive the data and use it as props
+  console.log(user);
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
@@ -28,7 +33,7 @@ const HeaderPage = () => {
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
-                  New Arrival
+                  <i className="fa fa-house bg-white dark:bg-gray-800 max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4" />
                 </a>
               </li>
               <li className="shrink-0">
@@ -420,68 +425,95 @@ const HeaderPage = () => {
               id="userDropdown1"
               className="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700"
             >
-              <ul className="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    My Account{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    My Orders{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    Settings{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    Favourites{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    Delivery Addresses{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    Billing Data{" "}
-                  </a>
-                </li>
-              </ul>
+              {user ? (
+                <>
+                  <ul className="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
+                    <li>
+                      <a
+                        href="#"
+                        title=""
+                        className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {" "}
+                        My Account{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        title=""
+                        className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {" "}
+                        My Orders{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        title=""
+                        className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {" "}
+                        Settings{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        title=""
+                        className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {" "}
+                        Favourites{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        title=""
+                        className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {" "}
+                        Delivery Addresses{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        title=""
+                        className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                      >
+                        {" "}
+                        Billing Data{" "}
+                      </a>
+                    </li>
+                  </ul>
+                </>
+              ) : (
+                <>
+                  <div className="p-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <a
+                      href="#"
+                      title=""
+                      className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >
+                      {" "}
+                      Login{" "}
+                    </a>
+                  </div>
+                  <div className="p-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <a
+                      href="#"
+                      title=""
+                      className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                    >
+                      {" "}
+                      Register{" "}
+                    </a>
+                  </div>
+                </>
+              )}
 
               <div className="p-2 text-sm font-medium text-gray-900 dark:text-white">
                 <a
@@ -494,7 +526,7 @@ const HeaderPage = () => {
                 </a>
               </div>
             </div>
-
+            <DarkThemeToggle />
             <button
               type="button"
               data-collapse-toggle="ecommerce-navbar-menu-1"

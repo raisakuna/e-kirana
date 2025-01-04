@@ -1,13 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import HeaderPage from "../../components/header/header.component";
-import HeroSection from "../../components/heroSection/hero.component";
+import HomeBanner from "../../components/banner/home-banner.component";
 import HomeFooter from "../../components/footer/footer.component";
 
 const LandingPage = () => {
+  let [loading, setLoading] = useState();
   return (
     <>
-      <HeaderPage />;
-      <HeroSection />;
+      <HeaderPage user={{ name: "John", email: "johndoe@gmail.com" }} />;
+      {/* <HeaderPage user={null} />; */}
+      <HomeBanner />;
       <HomeFooter />;
     </>
   );
