@@ -1,16 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import LandingPage from "./pages/landing/index.jsx";
-import Auth from "./pages/auth/index.jsx";
 import "./assets/css/main.css";
 import { Flowbite } from "flowbite-react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Routing from "./config/routing.config.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Flowbite>
-      <LandingPage />
-      <Auth.LoginPage />
+      <Routing />
     </Flowbite>
   </StrictMode>
 );

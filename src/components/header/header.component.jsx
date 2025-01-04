@@ -2,7 +2,7 @@ import React from "react";
 import "flowbite";
 import { DarkThemeToggle } from "flowbite-react";
 
-const HeaderPage = (user) => {
+const HomeHeader = (user) => {
   // create data and store informatioin -> state
   // receive the data and use it as props
   console.log(user);
@@ -29,7 +29,7 @@ const HeaderPage = (user) => {
             <ul className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
@@ -38,20 +38,20 @@ const HeaderPage = (user) => {
               </li>
               <li className="shrink-0">
                 <a
-                  href="#"
+                  href="/about-us"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
-                  Best Sellers
+                  About US
                 </a>
               </li>
               <li className="shrink-0">
                 <a
-                  href="#"
+                  href="/products"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
-                  Gift Ideas
+                  All Products
                 </a>
               </li>
               <li className="shrink-0">
@@ -615,4 +615,4 @@ const HeaderPage = (user) => {
   );
 };
 
-export default HeaderPage;
+export default HomeHeader;
