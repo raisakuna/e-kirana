@@ -4,6 +4,7 @@ import AboutUs from "../pages/about-us/about-us.page";
 import AllProductGrid from "../pages/products/all-products.page";
 import HomePageLayout from "../pages/layout/home.layout.page";
 import UserLayoutPage from "../pages/layout/user-layout.page";
+import AdminDashboardPage from "../pages/dashboard/admin-dashboard.page";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     childre: [
       {
         index: true,
-        element: <>Admin Dashboard </>,
+        element: <AdminDashboardPage />,
       },
     ],
   },
