@@ -1,6 +1,7 @@
 import React from "react";
 import "flowbite";
-import { DarkThemeToggle } from "flowbite-react";
+import { DarkThemeToggle, Navbar } from "flowbite-react";
+import { NavLink, Link } from "react-router-dom";
 
 const HomeHeader = (user) => {
   // create data and store informatioin -> state
@@ -12,7 +13,7 @@ const HomeHeader = (user) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <div className="shrink-0">
-              <a href="#" title="" className="">
+              <NavLink to="/" title="" className="">
                 <img
                   className="block w-auto h-8 dark:hidden"
                   src="public/ekirana_nobg.png"
@@ -23,54 +24,54 @@ const HomeHeader = (user) => {
                   src="public/ekirana_nobg.png"
                   alt=""
                 />
-              </a>
+              </NavLink>
             </div>
 
             <ul className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
               <li>
-                <a
-                  href="/"
+                <NavLink
+                  to="/"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
                   <i className="fa fa-house bg-white dark:bg-gray-800 max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4" />
-                </a>
+                </NavLink>
               </li>
               <li className="shrink-0">
-                <a
-                  href="/about-us"
+                <NavLink
+                  to="/about-us"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
                   About US
-                </a>
+                </NavLink>
               </li>
               <li className="shrink-0">
-                <a
-                  href="/products"
+                <NavLink
+                  to="/products"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
                   All Products
-                </a>
+                </NavLink>
               </li>
               <li className="shrink-0">
-                <a
-                  href="#"
+                <NavLink
+                  to="#"
                   title=""
                   className="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
                   Today's Deals
-                </a>
+                </NavLink>
               </li>
               <li className="shrink-0">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   title=""
                   className="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
                   Basic
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
