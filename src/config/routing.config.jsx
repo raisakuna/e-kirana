@@ -5,6 +5,7 @@ import AllProductGrid from "../pages/products/all-products.page";
 import HomePageLayout from "../pages/layout/home.layout.page";
 import UserLayoutPage from "../pages/layout/user-layout.page";
 import AdminDashboardPage from "../pages/dashboard/admin-dashboard.page";
+import CategoryWiseProductList from "../pages/category/category-product-list.page";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         element: <AboutUs />,
       },
       { path: "products", element: <AllProductGrid /> },
+      {
+        path: "category/:slug",
+        element: <CategoryWiseProductList />,
+      },
     ],
   },
 

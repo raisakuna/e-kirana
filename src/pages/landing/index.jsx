@@ -42,51 +42,19 @@ const LandingPage = () => {
 
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <a
-              href="#"
+              href="category/computer-office"
               className="flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
-              <svg
-                className="me-2 h-4 w-4 shrink-0 text-gray-900 dark:text-white"
-                aria-hidden={true}
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"
-                ></path>
-              </svg>
+              <i className="fa-solid fa-computer me-2 h-4 w-4 shrink-0 text-gray-900 dark:text-white" />
               <span className="text-sm font-medium text-gray-900 dark:text-white">
                 Computer &amp; Office
               </span>
             </a>
             <a
-              href="#"
+              href="category/collectible-toy"
               className="flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
-              <svg
-                className="me-2 h-4 w-4 shrink-0 text-gray-900 dark:text-white"
-                aria-hidden={true}
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M16.872 9.687 20 6.56 17.44 4 4 17.44 6.56 20 16.873 9.687Zm0 0-2.56-2.56M6 7v2m0 0v2m0-2H4m2 0h2m7 7v2m0 0v2m0-2h-2m2 0h2M8 4h.01v.01H8V4Zm2 2h.01v.01H10V6Zm2-2h.01v.01H12V4Zm8 8h.01v.01H20V12Zm-2 2h.01v.01H18V14Zm2 2h.01v.01H20V16Z"
-                ></path>
-              </svg>
+              <i className="fa-solid fa-child me-2 h-4 w-4 shrink-0 text-gray-900 dark:text-white" />
               <span className="text-sm font-medium text-gray-900 dark:text-white">
                 Collectibles &amp; Toys
               </span>
