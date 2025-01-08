@@ -1,6 +1,18 @@
+import { useState } from "react";
 import LogoComponent from "../../../components/companylogo/logo.component";
 
 const LoginPage = () => {
+  const [credentials, setCredentials] = useState();
+
+  const inputChangeEvent = (e) => {
+    const { value, name, type, required } = e.target.value;
+    console.log(value);
+
+    setCredentials({
+      ...credentials,
+      [name]: value,
+    });
+  };
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -28,6 +40,7 @@ const LoginPage = () => {
                     type="email"
                     name="email"
                     id="email"
+                    onChange={inputChangeEvent}
                     className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required={true}
