@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light Theme (default) */
 .active {
-  text-decoration: underline;
+  color: teal;
+}
+
+/* Dark Theme */
+.dark .active {
+  color: hotpink;
 }

@@ -43,6 +43,10 @@ const router = createBrowserRouter([
         index: true,
         element: <AdminDashboardPage />,
       },
+      {
+        path: "*",
+        element: <NotFoundPage link="/admin" />,
+      },
     ],
   },
 ]);
