@@ -8,6 +8,7 @@ const LoginPage = () => {
   const {
     control,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm();
   const submitEvent = (data) => {
@@ -40,7 +41,7 @@ const LoginPage = () => {
                     control={control}
                     name={"email"}
                     type="email"
-                    errMsg={errors?.email?.message}
+                    errMsg={errors?.email ? "Email is required" : ""}
                     placeholder="Enter your email..."
                   />
                 </div>
@@ -51,7 +52,7 @@ const LoginPage = () => {
                     control={control}
                     name={"password"}
                     type="password"
-                    errMsg={errors?.password?.message}
+                    errMsg={errors?.password ? "Passowrd is required" : ""}
                     placeholder="Enter your password..."
                   />
                 </div>

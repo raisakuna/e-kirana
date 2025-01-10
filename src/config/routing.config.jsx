@@ -28,6 +28,8 @@ const router = createBrowserRouter([
         element: <CategoryWiseProductList />,
       },
       { path: "/login", element: <LoginPage /> },
+      { path: "/register", element: <RegisterPage /> },
+
       {
         path: "*",
         element: <NotFoundPage />,
