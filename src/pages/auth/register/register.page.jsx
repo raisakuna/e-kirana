@@ -1,5 +1,15 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { data } from "react-router-dom";
+import { FormSubmitButtons } from "../../../components/buttons/button.component";
+import {
+  InputLabel,
+  TextAreaField,
+  RadioInputField,
+  SelectOptionField,
+  FileUploadField,
+  TextInputField,
+} from "../../../components/form/input.component";
 const RegisterPage = () => {
   const {
     control,
@@ -7,6 +17,9 @@ const RegisterPage = () => {
     formState: { errors },
   } = useForm();
 
+  const submitEvent = (data) => {
+    console.log(data);
+  };
   return (
     <>
       <div className="my-5 flex justify-center items-center min-h-screen bg-gray-100">
@@ -121,7 +134,6 @@ const RegisterPage = () => {
             <div className="mb-4">
               <InputLabel field={"profileImage"} labelTxt={"Image: "} />
               <FileUploadField
-                setError={setError}
                 control={control}
                 name={"profileImage"}
                 errMsg={errors?.profileImage?.message}
@@ -129,7 +141,7 @@ const RegisterPage = () => {
             </div>
 
             {/* Submit Button */}
-            <FormSubmitButtons loading={loading} />
+            <FormSubmitButtons />
           </form>
         </div>
       </div>

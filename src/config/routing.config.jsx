@@ -8,6 +8,7 @@ import AdminDashboardPage from "../pages/dashboard/admin-dashboard.page";
 import CategoryWiseProductList from "../pages/category/category-product-list.page";
 import NotFoundPage from "../pages/errors/not-found.page";
 import LoginPage from "../pages/auth/login/login.page";
+import RegisterPage from "../pages/auth/register/register.page";
 
 const router = createBrowserRouter([
   {

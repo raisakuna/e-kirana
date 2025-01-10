@@ -76,11 +76,6 @@ export const RadioInputField = ({ options, name, control, errMsg = null }) => {
             type="radio"
             value={option.value}
             name={name}
-            onChange={(e) => {
-              if (e.target.checked) {
-                onChange(option.value);
-              }
-            }}
             className="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500"
           />
           <label
