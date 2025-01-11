@@ -67,6 +67,7 @@ export const RadioInputField = ({ options, name, control, errMsg = null }) => {
     control: control,
     name: name,
   });
+
   return (
     <>
       {options.map((option, index) => (
@@ -76,6 +77,8 @@ export const RadioInputField = ({ options, name, control, errMsg = null }) => {
             type="radio"
             value={option.value}
             name={name}
+            onChange={(e) => onChange(e.target.value)} // Update form state
+            checked={value === option.value} // Proper selection handling
             className="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500"
           />
           <label
@@ -87,12 +90,8 @@ export const RadioInputField = ({ options, name, control, errMsg = null }) => {
         </div>
       ))}
       {errMsg ? (
-        <>
-          <span className="text-sm italic text-red-800">{errMsg}</span>
-        </>
-      ) : (
-        <></>
-      )}
+        <span className="text-sm italic text-red-800">{errMsg}</span>
+      ) : null}
     </>
   );
 };

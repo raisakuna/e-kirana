@@ -10,7 +10,39 @@ import {
   FileUploadField,
   TextInputField,
 } from "../../../components/form/input.component";
+import * as Yup from "yup";
 const RegisterPage = () => {
+  const userRegisterDTO = Yup.object({
+    fullName: Yup.string().min(2).max(25).required(),
+    email: Yup.string().email().required(),
+    password: Yup.string()
+      .matches(
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,25}$/,
+        {
+          message:
+            "Password should contain at least one character, a number and a special character.",
+        }
+      )
+      .required(),
+    passwordConfirmation: Yup.string()
+      .oneOf([Yup.ref("password")])
+      .required(),
+    gender: Yup.string()
+      .matches(/^(male|female|other)$/)
+      .required(),
+    role: Yup.string()
+      .matches(/^(customer|seller)$/)
+      .required(),
+    telephone: Yup.string()
+      .matches(
+        /^(?:\+977[- ]?)?(98\d{8}|97\d{8}|96\d{8}|0[1-6][- ]?\d{6,7})$/,
+        { message: "Phone number should start with 98 or .." }
+      )
+      .required(),
+    address: Yup.string().nullable().optional().default(null),
+    profileImage: Yup.mixed().required(),
+  });
+
   const {
     control,
     handleSubmit,
