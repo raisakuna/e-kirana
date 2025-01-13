@@ -11,6 +11,8 @@ import {
   TextInputField,
 } from "../../../components/form/input.component";
 import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 const RegisterPage = () => {
   const userRegisterDTO = Yup.object({
     fullName: Yup.string().min(2).max(25).required(),
@@ -47,7 +49,7 @@ const RegisterPage = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(userRegisterDTO) });
 
   const submitEvent = (data) => {
     console.log(data);

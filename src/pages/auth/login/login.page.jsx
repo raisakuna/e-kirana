@@ -4,7 +4,14 @@ import {
   InputLabel,
   TextInputField,
 } from "../../../components/form/input.component";
+import * as Yup from "yup";
 const LoginPage = () => {
+  const loginDTO = Yup.object({
+    email: Yup.string()
+      .email("Invalid Email Format")
+      .required("Email is compulsory"),
+    password: Yup.string().required(),
+  });
   const {
     control,
     handleSubmit,

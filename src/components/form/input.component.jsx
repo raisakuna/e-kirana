@@ -4,7 +4,7 @@ export const InputLabel = ({ field, labelTxt }) => {
     <>
       <label
         htmlFor={field}
-        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        className="block mb-2 text-sm  font-medium text-gray-900 dark:text-white"
       >
         {labelTxt}
       </label>
@@ -31,7 +31,7 @@ export const TextInputField = ({
         type={type}
         {...field}
         className={`
-                bg-gray-50 
+                bg-gray-900 
                 border 
                 ${errMsg ? "border-red-400" : "border-gray-300"}
                 text-gray-900 
@@ -41,8 +41,8 @@ export const TextInputField = ({
                 block 
                 w-full 
                 p-2 
-                dark:bg-gray-700
-                 dark:border-gray-600 
+                dark:bg-white-700
+                 dark:border-primary-900 
                  dark:placeholder-gray-400 
                  dark:text-white 
                  dark:focus:ring-blue-500 
@@ -59,7 +59,6 @@ export const TextInputField = ({
     </>
   );
 };
-
 export const RadioInputField = ({ options, name, control, errMsg = null }) => {
   const {
     field: { onChange, value },
@@ -67,7 +66,6 @@ export const RadioInputField = ({ options, name, control, errMsg = null }) => {
     control: control,
     name: name,
   });
-
   return (
     <>
       {options.map((option, index) => (
@@ -77,8 +75,11 @@ export const RadioInputField = ({ options, name, control, errMsg = null }) => {
             type="radio"
             value={option.value}
             name={name}
-            onChange={(e) => onChange(e.target.value)} // Update form state
-            checked={value === option.value} // Proper selection handling
+            onChange={(e) => {
+              if (e.target.checked) {
+                onChange(option.value);
+              }
+            }}
             className="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500"
           />
           <label
@@ -90,8 +91,12 @@ export const RadioInputField = ({ options, name, control, errMsg = null }) => {
         </div>
       ))}
       {errMsg ? (
-        <span className="text-sm italic text-red-800">{errMsg}</span>
-      ) : null}
+        <>
+          <span className="text-sm italic text-red-800">{errMsg}</span>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

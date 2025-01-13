@@ -11,3 +11,11 @@
 .dark .active {
   color: hotpink;
 }
+
+body {
+  background-color: #eeeeee;
+}
+
+.active {
+  color: #c87fdb;
+}
