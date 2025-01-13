@@ -12,6 +12,7 @@ import {
 } from "../../../components/form/input.component";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axiosInstance from "../../../config/axios.config";
 
 const RegisterPage = () => {
   const userRegisterDTO = Yup.object({
@@ -52,7 +53,12 @@ const RegisterPage = () => {
   } = useForm({ resolver: yupResolver(userRegisterDTO) });
 
   const submitEvent = (data) => {
-    console.log(data);
+    axiosInstance.post("/user", data, {
+      headers: {
+        // Corrected to lowercase
+        "Content-Type": "application/json", // Content-Type header
+      },
+    });
   };
   return (
     <>
